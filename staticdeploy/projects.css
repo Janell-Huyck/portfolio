@@ -1,0 +1,5 @@
+body {
+    background: url('./img/example_picture.png');
+    background-size: cover;
+    background-repeat: repeat;
+}

@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+{{project.title}}
+{{project.description}}
+{{project.created | date:"M Y"}}
+{{project.site_url | urlize }}
+{{project.repository | urlize }}
+
+{% endblock %}

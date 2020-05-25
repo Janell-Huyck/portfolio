@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<p>{{intro1}}</p>
+<p>{{intro2}}</p>
+<p>Languages: {{intro3}}</p>
+<p>{{intro4}}</p>
+
+<div class="p-3 d-flex flex-wrap">
+  
+    {% for tech in technology %}
+        <div class="p-3">
+            {{tech}}
+        </div>
+    {% endfor %}
+    
+</div>
+<p>{{intro5}}</p>
+    {{project.title}}
+<img class="card-img-top" src="/{{ project.picture_2 }}">
+
+{% endblock %}
+
