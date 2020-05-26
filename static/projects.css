@@ -1,0 +1,11 @@
+body {
+    box-sizing: border-box;
+
+}
+
+.my-card-deck {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}

@@ -1,0 +1,12 @@
+body {
+    box-sizing: border-box;
+    background-color: green;
+}
+
+.my-card-deck {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 20px solid black;
+    background-color: yellow;
+}
