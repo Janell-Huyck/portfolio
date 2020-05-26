@@ -54,7 +54,7 @@ but have them flex down if the viewport narrows, not overlapping other elements.
     <div class="card-group">
         {% for project in projects %}
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="/{{ project.picture_1 }}" alt="{{project.title}}" style="height: 300px">
+                    <img class="card-img-top" src="/projects/{{ project.picture_1 }}" alt="{{project.title}}" style="height: 300px">
                     <div class="card-body">
                         <h5 class="card-title">{{project.title}}</h5>
                         <p class="card-text">{{project.synopsis}}</p>
