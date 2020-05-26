@@ -58,7 +58,7 @@ def index(request):
         "• VS Code",
     ]
 
-    context["intro5"] = "Here are a few of my favorite projexts."
+    context["intro5"] = "Here are a few of my favorite projects."
     context["projects"] = Project.objects.all()
     html = "index.html"
     return render(request, html, context)
