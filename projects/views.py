@@ -59,7 +59,15 @@ def index(request):
     ]
 
     context["intro5"] = "Here are a few of my favorite projects."
-    context["projects"] = Project.objects.all()
+    all_projects = Project.objects.all().order_by("languages")
+    javascript_projects = []
+    for i in range(3):
+        javascript_projects.append(all_projects[i])
+    context["javascript_projects"] = javascript_projects
+    django_projects = []
+    for i in range(3, all_projects.count()):
+        django_projects.append(all_projects[i])
+    context["django_projects"] = django_projects
     html = "index.html"
     return render(request, html, context)
 

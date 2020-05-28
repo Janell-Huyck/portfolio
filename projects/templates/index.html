@@ -51,9 +51,30 @@ but have them flex down if the viewport narrows, not overlapping other elements.
 
 
     <p>{{intro5}}</p>
-    <div class="card-group">
-        {% for project in projects %}
-                <div class="card" style="width: 18rem;">
+    <div class="card-group row">
+        {% for project in javascript_projects %}
+                <div class="card p-3 m-3 border border-secondary rounded column-med" style="width: 18rem;">
+                    <img class="card-img-top" src="/{{ project.picture_1 }}" alt="{{project.title}}" style="height: 300px">
+                    <div class="card-body">
+                        <h5 class="card-title">{{project.title}}</h5>
+                        <p class="card-text">{{project.synopsis}}</p>
+                         <div class="card-footer">
+                            <span class="float-left">
+                                <a href="{% url 'project_detail' project.slug %}" class="btn btn-primary">
+                                    More Details</a>
+                            </span>
+                            <span class="float-right">
+                                <a href="{{ project.site_url}}" target="_blank" class="btn btn-primary ">
+                                See Live</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+        <div class="card-group row">
+        {% for project in django_projects %}
+                <div class="card p-3 m-3 border border-secondary rounded column-med" style="width: 18rem;">
                     <img class="card-img-top" src="/{{ project.picture_1 }}" alt="{{project.title}}" style="height: 300px">
                     <div class="card-body">
                         <h5 class="card-title">{{project.title}}</h5>
