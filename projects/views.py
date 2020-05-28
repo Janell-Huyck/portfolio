@@ -18,47 +18,40 @@ def index(request):
     ] = """Most recently, I’ve been working on projects
         in Django, like this site."""
 
-    context["intro3"] = """HTML | CSS | JavaScript | Python | Django"""
+    # context[
+    #     "skill_intro"
+    # ] = """One more thing...  I'm quite aware that actual coding is not just
+    #  about skills with any one language.  I've learned many other valuable
+    #   skills during my time at Kenzie.  Here are some of the more notable
+    #    ones..."""
 
-    context[
-        "intro4"
-    ] = """But that doesn't even scratch
-        the surface of what I\'ve learned so far..."""
-
-    context["technology1"] = [
+    context["skills"] = [
         "• Agile and Scrum",
         "• API’s",
         "• Async operations",
         "• Clean coding",
         "• Decorator functions",
         "• Git and version control",
-    ]
-    context["technology2"] = [
         "• GitLab and GitHub",
         "• Google-Fu",
         "• Group projects",
         "• Heroku",
         "• Logging",
         "• Long-running programs",
-    ]
-    context["technology3"] = [
-        "• Modules",
-        "• MySQL",
+        "• Modules (use and creation)",
         "• Pipenv",
         "• Poetry",
         "• Pyenv",
         "• PythonAnyhere",
-    ]
-    context["technology4"] = [
         "• React, React/Redux",
         "• SQLite",
-        "• Terminal commands",
+        "• Terminal commands / CLI",
         "• Ubuntu / Windows/ Mac familiarity",
         "• Virtual environments",
         "• VS Code",
     ]
 
-    context["intro5"] = "Here are a few of my favorite projects."
+    context["intro3"] = "Here are a few of my favorite projects."
     all_projects = Project.objects.all().order_by("languages")
     javascript_projects = []
     for i in range(3):

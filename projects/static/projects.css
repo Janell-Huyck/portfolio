@@ -1,6 +1,6 @@
 body {
     box-sizing: border-box;
-
+    background-color: rgb(230 230 230);
 }
 
 .my-card-deck {
@@ -8,4 +8,8 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
 
+}
+
+.my-card-text {
+    height: 80px;
 }

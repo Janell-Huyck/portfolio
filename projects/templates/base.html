@@ -19,14 +19,13 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="{% static 'projects.css' %}">
     </head>
-    <body class="container-fluid pt-3">
+    <body class="container-fluid pt-3 bg-light">
         <header>
-            <h1 class="bg-primary">Janell Huyck</h1>
-            {% comment %} {% include 'menu_bar.html'%}  {% endcomment %}
+            <h1 class="bg-light p-2">Janell Huyck</h1>
 
         </header>
-            {%block content%}
-            {%endblock%}
+            {% block content %}
+            {% endblock %}
         <footer>
             <p>Copywright 2020 by Janell Huyck</p>
         </footer>
