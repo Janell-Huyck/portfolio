@@ -2,63 +2,20 @@
 {% load static %}
 
 {% block content %}
-
-    <p>{{intro1}}</p>
-    <p>{{intro2}}</p>
-    {% comment %} <p>Languages: {{intro3}}</p> {% endcomment %}
-
-{% comment %} For future work - try to get these things i've learned to wrap themselves into 5-ish columns,
-but have them flex down if the viewport narrows, not overlapping other elements. {% endcomment %}
-
-{% comment %} <p>{{intro4}}</p> {% endcomment %}
-{% comment %} 
-<div class="container-fluid p-3 d-flex flex-wrap flex-column" style=" height:60vh; width: 100vw ;background-color: rgba(255,0,0,0.1);">
-    <div class="d-flex flex-column">
-    {% for tech in technology1 %}
-        <div class="p-3" style="width:auto;">
-            {{tech}}
-        </div>
-    {% endfor %}
+    <div class="container-fluid p-4">
+        <p>{{intro1}}</p>
+        <p>{{intro2}}</p>
+        <p>{{intro3}}</p>
     </div>
-
-    <div class="d-flex flex-column">
-    {% for tech in technology2 %}
-        <div class="p-3" style="width:auto;">
-            {{tech}}
-        </div>
-    {% endfor %}
-    </div>
-
-    <div class="d-flex flex-column">
-    {% for tech in technology3 %}
-        <div class="p-3" style="width:auto;">
-            {{tech}}
-        </div>
-    {% endfor %}
-    </div>
-
-    <div class="d-flex flex-column">
-    {% for tech in technology4 %}
-        <div class="p-3" style="width:auto;">
-            {{tech}}
-        </div>
-    {% endfor %}
-    </div>
-
-
-
-</div> {% endcomment %}
-
-
-    <p>{{intro5}}</p>
-    <div class="card-group">
-        {% for project in projects %}
-                <div class="card" style="width: 18rem;">
+    <h2>JavaScript Projects</h2>
+    <div class="card-group row">
+        {% for project in javascript_projects %}
+                <div class="card p-3 m-3 border border-secondary rounded column-med" style="width: 18rem;">
                     <img class="card-img-top" src="/{{ project.picture_1 }}" alt="{{project.title}}" style="height: 300px">
                     <div class="card-body">
                         <h5 class="card-title">{{project.title}}</h5>
-                        <p class="card-text">{{project.synopsis}}</p>
-                         <div class="card-footer">
+                        <p class="card-text my-card-text">{{project.synopsis}}</p>
+                        <div>
                             <span class="float-left">
                                 <a href="{% url 'project_detail' project.slug %}" class="btn btn-primary">
                                     More Details</a>
@@ -72,5 +29,39 @@ but have them flex down if the viewport narrows, not overlapping other elements.
                 </div>
         {% endfor %}
     </div>
+        <h2>Python Projects</h2>
+        <div class="card-group row">
+        {% for project in django_projects %}
+                <div class="card p-3 m-3 border border-secondary rounded column-med" style="width: 18rem;">
+                    <img class="card-img-top" src="/{{ project.picture_1 }}" alt="{{project.title}}" style="height: 300px">
+                    <div class="card-body">
+                        <h5 class="card-title">{{project.title}}</h5>
+                        <p class="card-text my-card-text">{{project.synopsis}}</p>
+                         <div>
+                            <span class="float-left">
+                                <a href="{% url 'project_detail' project.slug %}" class="btn btn-primary">
+                                    More Details</a>
+                            </span>
+                            <span class="float-right">
+                                <a href="{{ project.site_url}}" target="_blank" class="btn btn-primary ">
+                                See Live</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+    <div>
+        <br>
+        <hr>
+    </div>
+    <div class="container skills text-center f-6">
+            {% for skill in skills %}
+                {{skill}}
+            {% endfor %}
+    </div>
+        <hr>
+    <br>
+    <br>
 {% endblock %}
 

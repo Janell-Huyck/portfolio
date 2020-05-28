@@ -18,48 +18,43 @@ def index(request):
     ] = """Most recently, I’ve been working on projects
         in Django, like this site."""
 
-    context["intro3"] = """HTML | CSS | JavaScript | Python | Django"""
+    context["intro3"] = "Here are a few of my favorite projects."
 
-    context[
-        "intro4"
-    ] = """But that doesn't even scratch
-        the surface of what I\'ve learned so far..."""
-
-    context["technology1"] = [
+    context["skills"] = [
         "• Agile and Scrum",
         "• API’s",
         "• Async operations",
         "• Clean coding",
         "• Decorator functions",
         "• Git and version control",
-    ]
-    context["technology2"] = [
         "• GitLab and GitHub",
         "• Google-Fu",
         "• Group projects",
         "• Heroku",
         "• Logging",
         "• Long-running programs",
-    ]
-    context["technology3"] = [
-        "• Modules",
-        "• MySQL",
+        "• Modules (use and creation)",
         "• Pipenv",
         "• Poetry",
         "• Pyenv",
         "• PythonAnyhere",
-    ]
-    context["technology4"] = [
         "• React, React/Redux",
         "• SQLite",
-        "• Terminal commands",
+        "• Terminal commands / CLI",
         "• Ubuntu / Windows/ Mac familiarity",
         "• Virtual environments",
         "• VS Code",
     ]
 
-    context["intro5"] = "Here are a few of my favorite projects."
-    context["projects"] = Project.objects.all()
+    all_projects = Project.objects.all().order_by("languages")
+    javascript_projects = []
+    for i in range(3):
+        javascript_projects.append(all_projects[i])
+    context["javascript_projects"] = javascript_projects
+    django_projects = []
+    for i in range(3, all_projects.count()):
+        django_projects.append(all_projects[i])
+    context["django_projects"] = django_projects
     html = "index.html"
     return render(request, html, context)
 
