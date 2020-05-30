@@ -3,15 +3,27 @@
 
 {% block content %}
     <div class="container-fluid p-4">
-        <p>{{intro1}}</p>
-        <p>{{intro2}}</p>
-        <p>{{intro3}}</p>
+        <div class="d-flex" >
+            <div class="p-2 column-med">
+            <h1 class="p-2 column-med text-center">Janell Huyck</h1>
+                <p>{{intro1}}</p>
+                <p>{{intro2}}</p>
+            </div>
+            <hr>
+            <div class="container skills text-center f-6">
+                    {% for skill in skills %}
+                        {{skill}}
+                    {% endfor %}
+            </div>
+        </div>
+        <hr>
     </div>
+    <p>{{intro3}}</p>
     <h2>JavaScript Projects</h2>
     <div class="card-group row">
         {% for project in javascript_projects %}
                 <div class="card p-3 m-3 border border-secondary rounded column-med" style="width: 18rem;">
-                    <img class="card-img-top" src="/{{ project.picture_1 }}" alt="{{project.title}}" style="height: 300px">
+                    <img class="card-img-top" src="{{ project.picture_1 }}" alt="{{project.title}}" style="height: 300px">
                     <div class="card-body">
                         <h5 class="card-title">{{project.title}}</h5>
                         <p class="card-text my-card-text">{{project.synopsis}}</p>
@@ -53,14 +65,6 @@
     </div>
     <div>
         <br>
-        <hr>
-    </div>
-    <div class="container skills text-center f-6">
-            {% for skill in skills %}
-                {{skill}}
-            {% endfor %}
-    </div>
-        <hr>
     <br>
     <br>
 {% endblock %}
