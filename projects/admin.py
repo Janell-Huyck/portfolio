@@ -6,11 +6,11 @@ class ProjectAdmin(admin.ModelAdmin):
     list_display = (
         "title",
         "synopsis",
-        "languages",
+        "language",
         "description",
         "site_url",
     )
-    prepopulated_fields = {"slug": ("title",)}
+    # prepopulated_fields = {"slug": ("title",)}
 
 
 admin.site.register(Project, ProjectAdmin)

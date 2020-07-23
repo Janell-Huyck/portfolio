@@ -7,9 +7,11 @@ authors = ["Janell.Huyck <Janell.Huyck@outlook.com>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 django = "^3.0.7"
+gunicorn = "^20.0.4"
 
 [tool.poetry.dev-dependencies]
 black = "^19.10b0"
+flake8 = "^3.8.3"
 
 [build-system]
 requires = ["poetry>=0.12"]
