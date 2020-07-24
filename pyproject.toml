@@ -8,6 +8,7 @@ authors = ["Janell.Huyck <Janell.Huyck@outlook.com>"]
 python = "^3.8"
 django = "^3.0.7"
 gunicorn = "^20.0.4"
+django-environ = "^0.4.5"
 
 [tool.poetry.dev-dependencies]
 black = "^19.10b0"
