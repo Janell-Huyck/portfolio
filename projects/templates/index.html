@@ -21,6 +21,7 @@
     <p>{{intro3}}</p>
     <br/>
     {% for project_type in project_types %}
+    {% if project_type.projects %}
     <div class="container">
         <h2>{{project_type.description}}</h2>
         <div class="row">
@@ -58,6 +59,7 @@
     <div>
     <br>
     <hr/>
+    {% endif %}
     {% endfor %}
 {% endblock %}
 
