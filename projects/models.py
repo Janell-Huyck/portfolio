@@ -6,9 +6,15 @@ from django.template.defaultfilters import slugify
 class Project(models.Model):
     JAVASCRIPT = "JS"
     DJANGO = "DJ"
+    REACT_REDUX = "RR"
+    REACT = "RE"
+    PYTHON = "PY"
     LANGUAGE_CHOICES = [
         ("JS", "JavaScript"),
         ("DJ", "Django"),
+        ("RR", "React-Redux"),
+        ("RE", "React"),
+        ("PY", "Python"),
     ]
     slug = models.SlugField(null=False, unique=True, editable=False)
     title = models.CharField(max_length=50)
@@ -18,6 +24,8 @@ class Project(models.Model):
     )
     description = models.TextField(null=True, blank=True)
     site_url = models.URLField(null=True, blank=True)
+    repository = models.URLField(null=True, blank=True)
+
     picture_1 = models.FilePathField(
         path="static/img", recursive=True, null=True, blank=True
     )

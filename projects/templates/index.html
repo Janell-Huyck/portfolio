@@ -19,61 +19,45 @@
         <hr>
     </div>
     <p>{{intro3}}</p>
-    <h2>JavaScript Projects</h2>
-    <div class="card-group row">
-        {% for project in javascript_projects %}
-        
-                <div class="card p-3 m-3 border border-secondary rounded column-med" style="width: 18rem;">
-                    <img class="card-img-top" src="{{ project.picture_1 }}" alt="{{project.title}}" style="height: 300px">
-                    <div class="card-body">
-                        <h5 class="card-title">{{project.title}}</h5>
-                        <p class="card-text my-card-text">{{project.synopsis}}</p>
-                        <div>
-                            <span class="float-left">
-                                <a href="{% url 'project_detail' project.slug %}" class="btn btn-primary">
-                                    More Details</a>
-                            </span>
-                            {% if project.site_url %}
-                            <span class="float-right">
-                                <a href="{{ project.site_url}}" target="_blank" class="btn btn-primary ">
-                                See Live</a>
-                            </span>
-                            {% endif %}
+    <br/>
+    {% for project_type in project_types %}
+    <div class="container">
+        <h2>{{project_type.description}}</h2>
+        <div class="row">
+            {% for project in project_type.projects %}
+                    <div class="card p-3 m-3 border border-secondary rounded col-md-5" >
+                        <img class="card-img-top" src="{{ project.picture_1 }}" alt="{{project.title}}" style="height: 300px">
+                        <div class="card-body">
+                            <h5 class="card-title">{{project.title}}</h5>
+                            <p class="card-text my-card-text">{{project.synopsis}}</p>
+                            <div>
+                                <span class="float-left">
+                                    <a href="{% url 'project_detail' project.slug %}" class="btn btn-primary">
+                                        More Details</a>
+                                </span>
+                                {% if project.site_url %}
+                                <span class="float-right">
+                                    <a href="{{ project.site_url}}" target="_blank" class="btn btn-primary ">
+                                    See Live</a>
+                                </span>
+                                {% endif %}
+                                {% if project.repository %}
+                                <span class="float-right">
+                                    <a href="{{ project.repository}}" target="_blank" class="btn btn-primary ">
+                                    Repository</a>
+                                </span>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
-                </div>
-        {% empty %}
-            <p>No projects to show</p>
+            {% empty %}
+                <p>No projects to show</p>
         {% endfor %}
     </div>
-        <h2>Python/Django Projects</h2>
-        <div class="card-group row">
-        {% for project in django_projects %}
-                <div class="card p-3 m-3 border border-secondary rounded column-med" style="width: 18rem;">
-                    <img class="card-img-top" src="/{{ project.picture_1 }}" alt="{{project.title}}" style="height: 300px">
-                    <div class="card-body">
-                        <h5 class="card-title">{{project.title}}</h5>
-                        <p class="card-text my-card-text">{{project.synopsis}}</p>
-                         <div>
-                            <span class="float-left">
-                                <a href="{% url 'project_detail' project.slug %}" class="btn btn-primary">
-                                    More Details</a>
-                            </span>
-                            <span class="float-right">
-                                <a href="{{ project.site_url}}" target="_blank" class="btn btn-primary ">
-                                See Live</a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-        {% empty %}
-            <p>No projects to show</p>
-
-        {% endfor %}
     </div>
     <div>
-        <br>
     <br>
-    <br>
+    <hr/>
+    {% endfor %}
 {% endblock %}
 
