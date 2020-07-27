@@ -9,6 +9,7 @@ class ProjectAdmin(admin.ModelAdmin):
         "language",
         "description",
         "site_url",
+        "repository",
     )
     # prepopulated_fields = {"slug": ("title",)}
 
