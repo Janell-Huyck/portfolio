@@ -21,10 +21,18 @@
                     </div>
                                 
                 </div>
-                <img class="d-block w-25 p-3" src="{{ project.picture_1 }}" alt="{{project.title}} image 1">
-                <img class="d-block w-50 p-3" src="{{ project.picture_2 }}" alt="{{project.title}} image 2">
-                <img class="d-block w-50 p-3" src="{{ project.picture_3 }}" alt="{{project.title}} image 3">
-                <img class="d-block w-50 p-3" src="{{ project.picture_4 }}" alt="{{project.title}} image 4">
+                {% if project.picture_1%}
+                    <img class="d-block w-25 p-3" src="{{ project.picture_1 }}" alt="{{project.title}} image 1">
+                {% endif %}
+                {% if project.picture_2 %}
+                    <img class="d-block w-50 p-3" src="{{ project.picture_2 }}" alt="{{project.title}} image 2">
+                {% endif %}
+                {% if project.picture_3%}
+                    <img class="d-block w-50 p-3" src="{{ project.picture_3 }}" alt="{{project.title}} image 3">
+                {% endif %}
+                {% if project.picture_4%}
+                    <img class="d-block w-50 p-3" src="{{ project.picture_4 }}" alt="{{project.title}} image 4">
+                {% endif %}
     </div>
     <p>{{project.description | linebreaksbr}}</p>
 
