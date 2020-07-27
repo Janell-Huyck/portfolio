@@ -30,19 +30,19 @@
                         <div class="card-body">
                             <h5 class="card-title">{{project.title}}</h5>
                             <p class="card-text my-card-text">{{project.synopsis}}</p>
-                            <div>
-                                <span class="float-left">
+                            <div class="d-flex justify-content-around">
+                                <span>
                                     <a href="{% url 'project_detail' project.slug %}" class="btn btn-primary">
                                         More Details</a>
                                 </span>
                                 {% if project.site_url %}
-                                <span class="float-right">
+                                <span>
                                     <a href="{{ project.site_url}}" target="_blank" class="btn btn-primary ">
                                     See Live</a>
                                 </span>
                                 {% endif %}
                                 {% if project.repository %}
-                                <span class="float-right">
+                                <span>
                                     <a href="{{ project.repository}}" target="_blank" class="btn btn-primary ">
                                     Repository</a>
                                 </span>
