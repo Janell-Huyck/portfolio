@@ -18,13 +18,47 @@
         </div>
         <hr>
     </div>
-    <p>{{intro3}}</p>
-    <br/>
+
+    <div class="container">
+        <h2>Featured Project</h2>
+        <div class="row justify-content-around">
+            <div class="card p-3 m-3 border border-secondary rounded col-md-9" >
+                <img class="card-img-top" src="{{ featured.picture_1 }}" alt="{{featured.title}}" style="height: 300px">
+                <div class="card-body">
+                    <h5 class="card-title">{{featured.title}}</h5>
+                    <p class="card-text my-card-text">{{featured.synopsis}}</p>
+                    <div class="d-flex justify-content-around">
+                            <span>
+                                <a href="{% url 'project_detail' featured.slug %}" class="btn btn-primary">
+                                    More Details</a>
+                            </span>
+                            {% if featured.site_url %}
+                            <span>
+                                <a href="{{ featured.site_url}}" target="_blank" class="btn btn-primary ">
+                                See Live</a>
+                            </span>
+                            {% endif %}
+                            {% if featured.repository %}
+                            <span>
+                                <a href="{{ featured.repository}}" target="_blank" class="btn btn-primary ">
+                                Repository</a>
+                            </span>
+                                {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr/>
+
+
+
+
     {% for project_type in project_types %}
     {% if project_type.projects %}
     <div class="container">
         <h2>{{project_type.description}}</h2>
-        <div class="row">
+        <div class="row justify-content-around">
             {% for project in project_type.projects %}
                     <div class="card p-3 m-3 border border-secondary rounded col-md-5" >
                         <img class="card-img-top" src="{{ project.picture_1 }}" alt="{{project.title}}" style="height: 300px">

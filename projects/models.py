@@ -16,6 +16,7 @@ class Project(models.Model):
         ("RE", "React"),
         ("PY", "Python"),
     ]
+
     slug = models.SlugField(null=False, unique=True, editable=False)
     title = models.CharField(max_length=50)
     synopsis = models.TextField(null=True, blank=True)
@@ -38,6 +39,9 @@ class Project(models.Model):
     picture_4 = models.FilePathField(
         path="static/img", recursive=True, null=True, blank=True
     )
+
+    is_featured = models.BooleanField(default=False, null=True, blank=True)
+    display_order = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.title

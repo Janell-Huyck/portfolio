@@ -10,6 +10,8 @@ class ProjectAdmin(admin.ModelAdmin):
         "description",
         "site_url",
         "repository",
+        "is_featured",
+        "display_order",
     )
     # prepopulated_fields = {"slug": ("title",)}
 
