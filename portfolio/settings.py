@@ -27,12 +27,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 if DEBUG:
     ALLOWED_HOSTS = ["*"]
 else:
-    ALLOWED_HOSTS = ["67.205.160.58"]
+    ALLOWED_HOSTS = ["janellhuyck.com", ".janellhuyck.com"]
 
 # When I get a domain name, switch this over to:
 # ALLOWED_HOSTS = [".example.com", "example.com"]
