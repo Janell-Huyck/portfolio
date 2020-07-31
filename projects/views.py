@@ -18,37 +18,14 @@ def index(request):
         .order_by("display_order")
     )
 
-    # javascript_projects = Project.objects.filter(language="JS").filter(
-    #     is_featured=False
-    # )
-    # django_projects = Project.objects.filter(language="DJ").filter(is_featured=False)
-    # react_projects = Project.objects.filter(language="RE").filter(is_featured=False)
-    # react_redux_projects = Project.objects.filter(language__in=["RR", "RE"]).filter(
-    #     is_featured=False
-    # )
-    # python_projects = Project.objects.filter(language="PY").filter(is_featured=False)
-
     context = {
         "intro1": intro1,
         "intro2": intro2,
         "intro3": intro3,
         "skills": skills,
         "featured": featured_projects,
-        "project_types": [
-            {"projects": back_end_projects, "description": "Django/Python"},
-            {
-                "projects": front_end_projects,
-                "description": "React, React/Redux, JavaScript",
-            },
-            # {"projects": django_projects, "description": "Django Projects"},
-            # {"projects": python_projects, "description": "Python Projects"},
-            # {"projects": react_projects, "description": "React Projects"},
-            # {
-            #     "projects": react_redux_projects,
-            #     "description": "React / React-Redux Projects",
-            # },
-            # {"projects": javascript_projects, "description": "JavaScript Projects"},
-        ],
+        "back_end_projects": back_end_projects,
+        "front_end_projects": front_end_projects,
     }
     html = "index.html"
     return render(request, html, context)

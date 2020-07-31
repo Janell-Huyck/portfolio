@@ -1,6 +1,5 @@
 body {
     box-sizing: border-box;
-    background-color: rgb(230 230 230);
 }
 
 .my-card-deck {
@@ -12,4 +11,14 @@ body {
 
 .my-card-text {
     height: 80px;
+}
+
+.nav {
+    position:fixed;
+    top:0;
+    z-index: 20;
+}
+
+.tab-pane {
+    padding-top: 2rem;
 }
