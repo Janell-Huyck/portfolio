@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<ul class="container-fluid nav nav-tabs bg-light" id="myTab" role="tablist">
+<ul class="container-fluid nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="about-tab" data-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="true">About</a>
   </li>
@@ -19,26 +19,19 @@
 
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
-        <div class="container-fluid p-4">
-            <div class="d-flex" >
-                <div class="p-2 column-med">
-                <h1 class="p-2 column-med text-center">Janell Huyck</h1>
-                    <p>{{intro1}}</p>
-                    <p>{{intro2}}</p>
-                </div>
-                <hr>
-                <div class="container skills text-center f-6">
-                        {% for skill in skills %}
-                            {{skill}}
-                        {% endfor %}
-                </div>
+        <div class="container-fluid p-4 d-flex flex-row-reverse justify-content-around">
+            <img class = "img-fluid profile-image background-lt" src={{profile_image_url}}>
+          
+            <div class="p-3 align-items-center d-flex flex-column column-med p2 justify-content-around" >
+                    <h1 class="portfolio-text p-2">{{intro1}}</h1>
+                    <h2 class="portfolio-text p-2">{{intro2}}</h2>
             </div>
         </div>
     </div>
 
     <div class="tab-pane fade" id="featured" role="tabpanel" aria-labelledby="featured-tab">
-        <div class="container-fluid">
-            <h2 class="d-flex justify-content-center">{{featured.title}}</h2>
+        <h2 class="d-flex justify-content-center portfolio-text p-2">{{featured.title}}</h2>
+        <div class="d-flex flex-column align-items-center">
             <div class="row justify-content-around">
                 <div class="card p-3 m-3 border border-secondary rounded col-md-9" >
                     <img class="card-img-top" src="{{ featured.picture_1 }}" alt="{{featured.title}}" style="height: 300px">
@@ -70,8 +63,8 @@
     </div>
 
     <div class="tab-pane fade" id="frontend" role="tabpanel" aria-labelledby="frontend-tab">
+        <h2 class="d-flex justify-content-center portfolio-text p-2">JavaScript | React | React-Redux</h2>
         <div class="container">
-            <h2 class="d-flex justify-content-center">JavaScript | React | React-Redux</h2>
             <div class="row justify-content-around">
                 {% for project in front_end_projects %}
                     <div class="card p-3 m-3 border border-secondary rounded col-md-5" >
@@ -107,8 +100,8 @@
     </div>
 
     <div class="tab-pane fade show" id="backend" role="tabpanel" aria-labelledby="backend-tab">
+        <h2 class="d-flex justify-content-center portfolio-text p-2">Python | Django</h2>
         <div class="container">
-            <h2 class="d-flex justify-content-center">Python | Django</h2>
             <div class="row justify-content-around">
                 {% for project in back_end_projects %}
                     <div class="card p-3 m-3 border border-secondary rounded col-md-5" >

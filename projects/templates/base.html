@@ -14,21 +14,18 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <!-- CSS and Favicon links-->
         <link rel="stylesheet" href="{% static 'projects.css' %}">
-        {% comment %} {% fontawesome_5_static %}  {% endcomment %}
+        <link rel="icon" href="{% static 'favicon/favicon.ico' %}" type="image/png">
     </head>
-    <body class="container-fluid pt-3 bg-light">
+    
+    <body class="container-fluid pt-3">
         <header>
 
 
         </header>
                 {% block content %}
                 {% endblock %}
-        <footer>
-            <p>Copyright 2020 by Janell Huyck</p>
-        </footer>
-
-
         
     </body>
 </html>

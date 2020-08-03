@@ -1,12 +1,32 @@
 body {
     box-sizing: border-box;
+    background-image: url('./img/analytics-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
+.profile-image {
+    background-color: gainsboro;
+    border-radius: 50%;
+    /* image-rendering: pixelated; */
+    height: 20vw;
+    width: 20vw;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.portfolio-text {
+    color: black;
+    background-color: gainsboro;
+}
+
+.card {
+    background-color: gainsboro;
+}
 .my-card-deck {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
 }
 
 .my-card-text {
@@ -17,6 +37,7 @@ body {
     position:fixed;
     top:0;
     z-index: 20;
+    background-color:#000020;
 }
 
 .tab-pane {

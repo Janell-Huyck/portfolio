@@ -5,7 +5,7 @@ from projects.display_text import intro1, intro2, intro3, skills
 
 
 def index(request):
-
+    profile_image_url = "../static/janell-webcam-no-background.png"
     featured_projects = Project.objects.filter(is_featured=True)[0]
     front_end_projects = (
         Project.objects.filter(language__in=["RR", "RE", "JS"])
@@ -19,6 +19,7 @@ def index(request):
     )
 
     context = {
+        "profile_image_url": profile_image_url,
         "intro1": intro1,
         "intro2": intro2,
         "intro3": intro3,
