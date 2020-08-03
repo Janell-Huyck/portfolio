@@ -32,13 +32,29 @@ body {
     height: 80px;
 }
 
-.nav {
-    position:fixed;
-    top:0;
-    z-index: 20;
-    background-color:#000020;
+.active {
+    font-size:x-large ;
+}
+
+.nav-link{
+    align-self: center;
+    align-content: center;
+}
+
+.my-nav {
+    opacity: 100%;
+    z-index: 30;
+    background-color: #000020;
+}
+
+.top-pad {
+    padding: 2rem;
 }
 
 .tab-pane {
     padding-top: 2rem;
+}
+
+.nav-hamburger {
+    color: white;
 }

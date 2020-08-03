@@ -3,11 +3,11 @@
 
 
 {% block content %}
-    <div class="d-flex flex-wrap">
-                <div class="w-25 p-3">
-                    <h1>{{project.title}}</h1>
-                    <p>{{project.language}}</p>
-                    <p>{{project.synopsis}}</p>
+    <div class="d-flex flex-wrap ">
+                <div class="w-25 p-3 ">
+                    <h1 class="portfolio-text p-2">{{project.title}}</h1>
+                    <p class="portfolio-text p-2">{{project.language}}</p>
+                    <p class="portfolio-text p-2">{{project.synopsis}}</p>
                     <div class="d-flex justify-content-around">
                         <a href="{% url 'home' %}" class="btn btn-primary" >Home</a>
                         {% if project.site_url %}
@@ -34,7 +34,7 @@
                     <img class="d-block w-50 p-3" src="{{ project.picture_4 }}" alt="{{project.title}} image 4">
                 {% endif %}
     </div>
-    <p>{{project.description | linebreaksbr}}</p>
+    <p class="portfolio-text p-2">{{project.description | linebreaksbr}}</p>
 
               
 {% endblock %}
