@@ -8,7 +8,6 @@ body {
 .profile-image {
     background-color: gainsboro;
     border-radius: 50%;
-    /* image-rendering: pixelated; */
     height: 20vw;
     width: 20vw;
     object-fit: cover;
