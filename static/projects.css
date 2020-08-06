@@ -8,29 +8,29 @@ body {
 .profile-image {
     background-color: gainsboro;
     border-radius: 50%;
-    height: 20vw;
-    width: 20vw;
+    /* height: 20vw; */
+    /* width: 20vw; */
     object-fit: cover;
     overflow: hidden;
 }
 
 .portfolio-text {
     color: black;
-    background-color: gainsboro;
+    /* background-color: gainsboro; */
 }
 
-.card {
+/* .card {
     background-color: gainsboro;
-}
-.my-card-deck {
+} */
+/* .my-card-deck {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-}
+} */
 
-.my-card-text {
+/* .my-card-text {
     height: 80px;
-}
+} */
 
 .active {
     font-size:x-large ;

@@ -3,38 +3,83 @@
 
 
 {% block content %}
-    <div class="d-flex flex-wrap ">
-                <div class="w-25 p-3 ">
-                    <h1 class="portfolio-text p-2">{{project.title}}</h1>
-                    <p class="portfolio-text p-2">{{project.language}}</p>
-                    <p class="portfolio-text p-2">{{project.synopsis}}</p>
-                    <div class="d-flex justify-content-around">
-                        <a href="{% url 'home' %}" class="btn btn-primary" >Home</a>
-                        {% if project.site_url %}
-                            <a href="{{ project.site_url}}" target="_blank" class="btn btn-primary">
-                            See Live</a>
-                        {% endif %}
-                        {% if project.repository %}
-                            <a href="{{ project.repository}}" target="_blank" class="btn btn-primary">
-                            Repository</a>
-                        {% endif %}
-                    </div>
-                                
-                </div>
-                {% if project.picture_1%}
-                    <img class="d-block w-25 p-3" src="{{ project.picture_1 }}" alt="{{project.title}} image 1">
-                {% endif %}
-                {% if project.picture_2 %}
-                    <img class="d-block w-50 p-3" src="{{ project.picture_2 }}" alt="{{project.title}} image 2">
-                {% endif %}
-                {% if project.picture_3%}
-                    <img class="d-block w-50 p-3" src="{{ project.picture_3 }}" alt="{{project.title}} image 3">
-                {% endif %}
-                {% if project.picture_4%}
-                    <img class="d-block w-50 p-3" src="{{ project.picture_4 }}" alt="{{project.title}} image 4">
-                {% endif %}
-    </div>
-    <p class="portfolio-text p-2">{{project.description | linebreaksbr}}</p>
 
-              
+    <!-- Overall Container -->
+    <div class="container-fluid bg-light"> 
+
+        <!-- Row 1: Everything but the "more details" text. should wrap -->
+        <div class="row"> 
+
+            <!--quarter 1 -->
+            <div class="col-lg-6 align-self-center"> 
+
+                <!-- Row within quarter 1 -->
+                <div class="row">  
+
+                    <!-- text box & buttons column-->
+                    <div class="col-lg-6 align-self-center bg-light mx-auto">
+
+                        <!-- text boxes only -->
+                        <div class="col-lg-12 align-self-center">
+                            <h1 class="">{{project.title}}</h1>
+                            <p class="">{{project.language}}</p>
+                            <p class="">{{project.synopsis}}</p>
+                        </div> <!-- end of text boxes-->
+
+                        <!-- just buttons -->
+                        <div class="row mx-auto align-self-center">
+                            <a href="{% url 'home' %}" class="btn btn-primary mx-auto m-2" >Home</a>
+                            {% if project.site_url %}
+                                <a href="{{ project.site_url}}" target="_blank" class="btn btn-primary mx-auto m-2">
+                                See Live</a>
+                            {% endif %}
+                            {% if project.repository %}
+                                <a href="{{ project.repository}}" target="_blank" class="btn btn-primary mx-auto m-2">
+                                Repository</a>
+                            {% endif %}
+                        </div> <!-- end of just buttons-->
+
+                    </div> <!-- end of text box and buttons column -->
+
+                    <!-- picture 1 column-->
+                    <div class="col-lg-6 align-self-center">
+                        {% if project.picture_1%}
+                            <img class="img-fluid" src="{{ project.picture_1 }}" alt="{{project.title}} image 1">
+                        {% endif %}   
+                    </div> <!--end column picture 1-->
+
+                </div> <!-- end of row withwithin quarter 1-->
+            </div> <!-- end quarter 1-->
+
+            <!-- quarter 2 --> 
+            <div class="col-lg-6 align-self-center">
+                {% if project.picture_2 %}
+                    <img class="img-fluid" src="{{ project.picture_2 }}" alt="{{project.title}} image 2">
+                {% endif %}
+            </div>
+
+            <!-- quarter 3 --> 
+            <div class="col-lg-6 align-self-center">
+                    {% if project.picture_3%}
+                        <img class="img-fluid" src="{{ project.picture_3 }}" alt="{{project.title}} image 3">
+                    {% endif %}
+            </div>
+
+            <!-- quarter 4 --> 
+            <div class="col-lg-6 align-self-center">
+                    {% if project.picture_4%}
+                        <img class="img-fluid" src="{{ project.picture_4 }}" alt="{{project.title}} image 4">
+                    {% endif %}
+            </div>
+
+        </div> <!--end row 1-->
+
+        <!-- Row 2: "more text details" -->
+        <div class="row">
+            <div class="col-lg-12 align-items-center mx-auto p-2 bg-light">
+                <p class="p-2">{{project.description | linebreaksbr}}</p>
+            </div>
+        </div> <!-- end row 2-->
+
+    </div>  <!-- end primary container-->        
 {% endblock %}
