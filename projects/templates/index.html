@@ -2,17 +2,20 @@
 {% load static %}
 
 {% block content %}
+    <div class="row align-items-center justify-content-center p-3"> 
 
-    <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
-        <div class="container-fluid p-4 d-flex flex-row-reverse justify-content-around">
-            <img class = "img-fluid profile-image bg-light" src={{profile_image_url}}>
-          
-            <div class="p-3 align-items-center d-flex flex-column column-med p2 justify-content-around" >
-                    <h1 class="portfolio-text bg-light p-2">{{intro1}}</h1>
-                    <h2 class="portfolio-text bg-light p-2">{{intro2}}</h2>
-            </div>
+        <!-- col 1: text.  on left when large, else under picture -->
+        <div class="col-lg-7 order-lg-1 order-2 text-center justify-content-center mt-4">
+            <h1 class="bg-light p-2 mt-2">{{intro1}}</h1>
+            <h2 class="bg-light p-2 mt-2">{{intro2}}</h2>
         </div>
-    </div> 
+        
+        <!-- col 2: profile image. on right when large else on top -->
+        <div class="col-lg-5 order-lg-2 order-1">
+            <img class = "img-fluid profile-image bg-light d-block mx-auto" src={{profile_image_url}}>
+        </div>
+
+    </div> <!-- end row-->
     
 
 {% endblock %}
