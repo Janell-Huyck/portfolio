@@ -8,38 +8,53 @@ body {
 .profile-image {
     background-color: gainsboro;
     border-radius: 50%;
-    /* image-rendering: pixelated; */
-    height: 20vw;
-    width: 20vw;
+    /* height: 20vw; */
+    /* width: 20vw; */
     object-fit: cover;
     overflow: hidden;
 }
 
 .portfolio-text {
     color: black;
-    background-color: gainsboro;
+    /* background-color: gainsboro; */
 }
 
-.card {
+/* .card {
     background-color: gainsboro;
-}
-.my-card-deck {
+} */
+/* .my-card-deck {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-}
+} */
 
-.my-card-text {
+/* .my-card-text {
     height: 80px;
+} */
+
+.active {
+    font-size:x-large ;
 }
 
-.nav {
-    position:fixed;
-    top:0;
-    z-index: 20;
-    background-color:#000020;
+.nav-link{
+    align-self: center;
+    align-content: center;
+}
+
+.my-nav {
+    opacity: 100%;
+    z-index: 30;
+    background-color: #000020;
+}
+
+.top-pad {
+    padding: 2rem;
 }
 
 .tab-pane {
     padding-top: 2rem;
+}
+
+.nav-hamburger {
+    color: white;
 }
