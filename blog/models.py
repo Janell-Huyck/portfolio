@@ -8,6 +8,19 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
+    picture_1 = models.FilePathField(
+        path="static/img/blog", recursive=True, null=True, blank=True
+    )
+    picture_2 = models.FilePathField(
+        path="static/img/blog", recursive=True, null=True, blank=True
+    )
+    picture_3 = models.FilePathField(
+        path="static/img/blog", recursive=True, null=True, blank=True
+    )
+    picture_4 = models.FilePathField(
+        path="static/img/blog", recursive=True, null=True, blank=True
+    )
+
     def publish(self):
         self.published_date = timezone.now()
         self.save()
