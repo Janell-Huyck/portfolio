@@ -1,3 +1,14 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def newest():
+    pass
+
+
+def all():
+    pass
+
+
+def detail():
+    pass
+
