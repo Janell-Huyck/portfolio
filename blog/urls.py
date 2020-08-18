@@ -1,8 +1,11 @@
 from django.urls import path
-from projects import views
+from blog import views
 
 urlpatterns = [
-    path("newest", views.newest, name="newest"),
-    path("all", views.all, name="all"),
-    path("<slug:slug>", views.detail, name="detail"),
+    path("", views.index, name="blog"),
+    path("newest/", views.newest, name="newest"),
+    path("all/", views.all, name="all"),
+    path("new/", views.new, name="new"),
+    path("<int:pk>/", views.detail, name="detail"),
+    path("<int:pk>/edit", views.edit, name="edit"),
 ]

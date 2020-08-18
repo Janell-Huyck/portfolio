@@ -23,6 +23,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", index, name="home"),
     path("projects/", include("projects.urls")),
+    path("blog/", include("blog.urls")),
 ]
 # urlpatterns += projects_urls
 
