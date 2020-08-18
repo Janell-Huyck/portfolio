@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from projects.urls import urlpatterns as projects_urls
-
+from projects.views import error404, error500
 
 urlpatterns = [
     path("admin/", admin.site.urls),
 ]
-
 urlpatterns += projects_urls
+
+handler404 = error404
+handler500 = error500
+

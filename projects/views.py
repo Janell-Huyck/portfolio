@@ -52,3 +52,11 @@ def projectDetail(request, slug):
     }
     html = "project_detail.html"
     return render(request, html, context)
+
+
+def error404(request, exception):
+    return render(request, "404.html", status=404)
+
+
+def error500(request):
+    return render(request, "500.html", status=500)
