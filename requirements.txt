@@ -1,0 +1,22 @@
+appdirs==1.4.4
+asgiref==3.2.10
+attrs==19.3.0
+black==19.10b0
+click==7.1.2
+Django==3.1
+django-ckeditor==5.9.0
+django-environ==0.4.5
+django-fontawesome-5==1.0.18
+django-js-asset==1.2.2
+flake8==3.8.3
+gunicorn==20.0.4
+mccabe==0.6.1
+pathspec==0.8.0
+-e git+git@github.com:Janell-Huyck/portfolio-django.git@cc3c498870a7e3f3728a65fdefa12cee0bf3616e#egg=portfolio
+pycodestyle==2.6.0
+pyflakes==2.2.0
+pytz==2020.1
+regex==2020.5.14
+sqlparse==0.3.1
+toml==0.10.1
+typed-ast==1.4.1
