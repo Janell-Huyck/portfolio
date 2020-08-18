@@ -1,9 +1,0 @@
-{% extends 'base.html' %}
-{% block title %}View Posts by Category{% endblock %}
-{% block content %}
-    {% for post in category_posts %}
-        {% include './categories_blurb.html'%}
-    {% empty %}
-    <h2>Sorry, no posts are available for category "<em>{{cats}}</em>" </h2>
-    {% endfor %}
-{% endblock %}

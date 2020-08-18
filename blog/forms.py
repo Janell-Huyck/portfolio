@@ -1,8 +1,5 @@
 from django import forms
-from blog.models import Post, Category
-
-category_choices = Category.objects.all().values_list("name", "name")
-category_choice_list = [choice for choice in category_choices]
+from blog.models import Post
 
 
 class PostForm(forms.ModelForm):
@@ -10,17 +7,17 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = (
             "title",
-            "category",
+            "tag",
             "body",
+            "snippet",
             "picture_1",
+            "picture_1_text",
             "picture_2",
+            "picture_2_text",
             "picture_3",
+            "picture_3_text",
             "picture_4",
+            "picture_4_text",
         )
 
-        # widgets = {
-        #     "category": forms.Select(
-        #         choices=category_choice_list, attrs={"class": "form-control"}
-        #     )
-        # }
-
+        widgets = {"snippet": forms.Textarea(attrs={"class": "form-control"})}

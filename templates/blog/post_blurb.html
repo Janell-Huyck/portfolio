@@ -3,16 +3,17 @@
         <div class="date">
             {{ post.published_date }}
         </div>
-
-        <img class="card-img-top" src="../{{ post.picture_1 }}" alt="{{post.title}}" style="height: 300px">
+        {% if post.picture_1 %}
+            <img class="card-img-top" src="../{{ post.picture_1 }}" alt="{{post.picture_1_text}}">
+        {% endif %}
         
         <div class="card-body">
             <h4 class="card-title">{{post.title}}</h4>
             <h5 class="card-subtitle">Tags:</h5>
-            {% for cats in post.category.all %}
-                <a href="{% url 'category' cats=cats%}"><em>{{cats}}</em></a>
+            {% for tag in post.tag.all %}
+                <a href="{% url 'tag' tag=tag%}"><em>{{tag}}</em></a>
             {% endfor %}
-            <p class="card-text my-card-text">{{post.body|safe}}</p>
+            <p class="card-text my-card-text">{{post.snippet|safe}}</p>
             <div class="d-flex justify-content-around">
                 <span>
                     <a href="{% url 'detail' pk=post.pk %}" class="btn btn-primary">

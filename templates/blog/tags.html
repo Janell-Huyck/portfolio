@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}View Posts by Tag{% endblock %}
+{% block content %}
+    {% for post in tag_posts %}
+        {% include './tag_blurb.html'%}
+    {% empty %}
+    <h2>Sorry, no posts are available for tag "<em>{{tag}}</em>" </h2>
+    {% endfor %}
+{% endblock %}

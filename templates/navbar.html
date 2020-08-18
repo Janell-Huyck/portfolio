@@ -11,7 +11,7 @@
                 <a class="nav-item nav-link {% if request.resolver_match.url_name == "backend" %}active{% endif %}" href="{% url 'backend'%}">Back End</a>
                 <a class="nav-item nav-link {% if request.resolver_match.url_name == "blog" %}active{% endif %}" href="{% url 'blog'%}">Blog</a>
                 {% if user.is_authenticated %}
-                    <a class="nav-item nav-link {% if request.resolver_match.url_name == "add_category" %}active{% endif %}" href="{% url 'add_category'%}">Add Blog Category</a>
+                    <a class="nav-item nav-link {% if request.resolver_match.url_name == "add_tag" %}active{% endif %}" href="{% url 'add_tag'%}">Add Blog Tag</a>
 
                 {% endif %}
             </div>

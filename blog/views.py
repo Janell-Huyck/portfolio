@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.views.generic.edit import CreateView
 
-from blog.models import Post, Category
+from blog.models import Post, Tag
 
 
 def index(request):
@@ -21,10 +21,13 @@ def index(request):
     return render(request, html, context)
 
 
-def categoryView(request, cats):
-    html = "blog/categories.html"
-    category_posts = Post.objects.filter(category__name__icontains=cats)
-    context = {"category_posts": category_posts, "cats": cats}
+def tagView(request, tag):
+    html = "blog/tags.html"
+    tag_posts = Post.objects.filter(tag__name__icontains=tag)
+    if tag_posts:
+        context = {"tag_posts": tag_posts, "tag": tag}
+    else:
+        context = {"tag": tag}
     return render(request, html, context)
 
 
@@ -48,9 +51,9 @@ def new(request):
 
 
 @method_decorator(login_required, name="dispatch")
-class AddCategoryView(CreateView):
-    model = Category
-    template_name = "blog/add_category.html"
+class AddTagView(CreateView):
+    model = Tag
+    template_name = "blog/add_tag.html"
     fields = "__all__"
 
 
