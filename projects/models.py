@@ -28,16 +28,16 @@ class Project(models.Model):
     repository = models.URLField(null=True, blank=True)
 
     picture_1 = models.FilePathField(
-        path="static/img", recursive=True, null=True, blank=True
+        path="static/img/projects", recursive=True, null=True, blank=True
     )
     picture_2 = models.FilePathField(
-        path="static/img", recursive=True, null=True, blank=True
+        path="static/img/projects", recursive=True, null=True, blank=True
     )
     picture_3 = models.FilePathField(
-        path="static/img", recursive=True, null=True, blank=True
+        path="static/img/projects", recursive=True, null=True, blank=True
     )
     picture_4 = models.FilePathField(
-        path="static/img", recursive=True, null=True, blank=True
+        path="static/img/projects", recursive=True, null=True, blank=True
     )
 
     is_featured = models.BooleanField(default=False, null=True, blank=True)

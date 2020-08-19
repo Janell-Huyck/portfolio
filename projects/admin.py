@@ -13,7 +13,6 @@ class ProjectAdmin(admin.ModelAdmin):
         "is_featured",
         "display_order",
     )
-    # prepopulated_fields = {"slug": ("title",)}
 
 
 admin.site.register(Project, ProjectAdmin)

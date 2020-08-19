@@ -17,14 +17,14 @@ def index(request):
 
 
 def featured(request):
-    html = "featured.html"
+    html = "projects/featured.html"
     featured = Project.objects.filter(is_featured=True)[0]
     context = {"featured": featured}
     return render(request, html, context)
 
 
 def front_end(request):
-    html = "frontend.html"
+    html = "projects/frontend.html"
     projects = (
         Project.objects.filter(language__in=["RR", "RE", "JS"])
         .filter(is_featured=False)
@@ -35,7 +35,7 @@ def front_end(request):
 
 
 def back_end(request):
-    html = "backend.html"
+    html = "projects/backend.html"
     projects = (
         Project.objects.filter(language__in=["DJ", "PY"])
         .filter(is_featured=False)
@@ -50,5 +50,13 @@ def projectDetail(request, slug):
     context = {
         "project": project,
     }
-    html = "project_detail.html"
+    html = "projects/project_detail.html"
     return render(request, html, context)
+
+
+def error404(request, exception):
+    return render(request, "404.html", status=404)
+
+
+def error500(request):
+    return render(request, "500.html", status=500)

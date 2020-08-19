@@ -1,15 +1,17 @@
 body {
-    box-sizing: border-box;
-    background-image: url('./img/analytics-background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+  --bg-accent-color-dark:hsl(27, 100%, 50%);
+  --bg-accent-color-med:hsl(27, 100%, 60%);
+  --bg-accent-color-lt: hsl(27, 100%, 72%);
+  box-sizing: border-box;
+  background-image: url('./img/backgrounds/tangarine-cream-diagonal-fade.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+};
+
 
 .profile-image {
     background-color: gainsboro;
     border-radius: 50%;
-    /* height: 20vw; */
-    /* width: 20vw; */
     object-fit: cover;
     overflow: hidden;
 }
@@ -18,22 +20,11 @@ body {
     color: black;
 }
 
-/* .card {
-    background-color: gainsboro;
-} */
-/* .my-card-deck {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-} */
-
-/* .my-card-text {
-    height: 80px;
-} */
 
 .active {
     font-size:x-large ;
 }
+
 
 .nav-link{
     align-self: center;
@@ -41,9 +32,14 @@ body {
 }
 
 .my-nav {
+    background-color:var(--bg-accent-color-med) ;
+    position: fixed;
+    left: 0px;
+    top: 0px;
     opacity: 100%;
     z-index: 30;
-    background-color: #000020;
+    width: 100vw;
+    margin: 0;
 }
 
 .top-pad {

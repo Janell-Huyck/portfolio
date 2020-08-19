@@ -14,12 +14,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from projects.urls import urlpatterns as projects_urls
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+from projects.views import error404, error500, index
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", index, name="home"),
+    path("projects/", include("projects.urls")),
+    path("blog/", include("blog.urls")),
 ]
 
-urlpatterns += projects_urls
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = error404
+handler500 = error500
