@@ -39,11 +39,12 @@ def detail(request, pk):
 @login_required
 def new(request):
     if request.method == "POST":
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.published_date = timezone.now()
             post.save()
+            form.save_m2m()
             return redirect("detail", pk=post.pk)
     else:
         form = PostForm()
@@ -61,11 +62,12 @@ class AddTagView(CreateView):
 def edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
-        form = PostForm(request.POST, instance=post)
+        form = PostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             post = form.save(commit=False)
             post.published_date = timezone.now()
             post.save()
+            form.save_m2m()
             return redirect("detail", pk=post.pk)
     else:
         form = PostForm(instance=post)

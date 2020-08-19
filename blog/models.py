@@ -22,29 +22,27 @@ class Post(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
     tag = models.ManyToManyField(Tag, blank=True)
 
-    picture_1 = models.FilePathField(
-        path="static/img/blog", recursive=True, null=True, blank=True
-    )
+    header_image = models.ImageField(null=True, blank=True, upload_to="images/")
+    header_image_text = models.CharField(max_length=200, blank=True, null=True)
+
+    picture_1 = models.ImageField(null=True, blank=True, upload_to="images/")
     picture_1_text = models.CharField(max_length=200, blank=True, null=True)
-    picture_2 = models.FilePathField(
-        path="static/img/blog", recursive=True, null=True, blank=True
-    )
+
+    picture_2 = models.ImageField(null=True, blank=True, upload_to="images/")
     picture_2_text = models.CharField(max_length=200, blank=True, null=True)
-    picture_3 = models.FilePathField(
-        path="static/img/blog", recursive=True, null=True, blank=True
-    )
+
+    picture_3 = models.ImageField(null=True, blank=True, upload_to="images/")
     picture_3_text = models.CharField(max_length=200, blank=True, null=True)
-    picture_4 = models.FilePathField(
-        path="static/img/blog", recursive=True, null=True, blank=True
-    )
+
+    picture_4 = models.ImageField(null=True, blank=True, upload_to="images/")
     picture_4_text = models.CharField(max_length=200, blank=True, null=True)
 
     def publish(self):
         self.published_date = timezone.now()
         self.save()
 
-    def get_categories(self):
-        return ",".join([str(cat) for cat in self.tag.all()])
+    def get_tags(self):
+        return ",".join([str(tag) for tag in self.tag.all()])
 
     def __str__(self):
         return self.title

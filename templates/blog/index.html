@@ -6,10 +6,13 @@
 <h1>Code Comments</h1>
 <p><em>A chronicle of my journey as a new coder as I navigate 
 learning new technologies, languages, and platforms.</em></p>
-{% for post in posts %}
-    {% include './post_blurb.html'%}
-    {% empty %}
-        <p>No posts to show</p>
-    {% endfor %}
-
+<div class="container d-flex">
+    <div class="row justify-content-around">
+        {% for post in posts %}
+            {% include './post_blurb.html'%}
+        {% empty %}
+                <p>No posts to show</p>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

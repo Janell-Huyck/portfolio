@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from projects.urls import urlpatterns as projects_urls
+from django.conf import settings
+from django.conf.urls.static import static
 from projects.views import error404, error500, index
 
 
@@ -25,8 +26,9 @@ urlpatterns = [
     path("projects/", include("projects.urls")),
     path("blog/", include("blog.urls")),
 ]
-# urlpatterns += projects_urls
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = error404
 handler500 = error500
-

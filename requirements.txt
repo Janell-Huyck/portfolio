@@ -12,7 +12,8 @@ flake8==3.8.3
 gunicorn==20.0.4
 mccabe==0.6.1
 pathspec==0.8.0
--e git+git@github.com:Janell-Huyck/portfolio-django.git@cc3c498870a7e3f3728a65fdefa12cee0bf3616e#egg=portfolio
+Pillow==7.2.0
+-e git+git@github.com:Janell-Huyck/portfolio-django.git@96a0b24279f5a000b163adadfc1d042f4584a95b#egg=portfolio
 pycodestyle==2.6.0
 pyflakes==2.2.0
 pytz==2020.1

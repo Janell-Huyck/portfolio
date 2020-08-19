@@ -5,11 +5,13 @@ from blog.models import Post
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = (
+        fields = [
             "title",
             "tag",
             "body",
             "snippet",
+            "header_image",
+            "header_image_text",
             "picture_1",
             "picture_1_text",
             "picture_2",
@@ -18,6 +20,6 @@ class PostForm(forms.ModelForm):
             "picture_3_text",
             "picture_4",
             "picture_4_text",
-        )
+        ]
 
         widgets = {"snippet": forms.Textarea(attrs={"class": "form-control"})}
