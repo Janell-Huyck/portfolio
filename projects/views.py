@@ -5,14 +5,14 @@ from projects.display_text import intro1, intro2
 
 
 def index(request):
-    profile_image_url = "../static/janell-webcam-no-background.png"
+    profile_image_url = "../static/img/portfolio-images/janell-black-background.jpeg"
 
     context = {
         "profile_image_url": profile_image_url,
         "intro1": intro1,
         "intro2": intro2,
     }
-    html = "index.html"
+    html = "portfolio/index.html"
     return render(request, html, context)
 
 
@@ -55,8 +55,8 @@ def projectDetail(request, slug):
 
 
 def error404(request, exception):
-    return render(request, "404.html", status=404)
+    return render(request, "portfolio/404.html", status=404)
 
 
 def error500(request):
-    return render(request, "500.html", status=500)
+    return render(request, "portfolio/500.html", status=500)

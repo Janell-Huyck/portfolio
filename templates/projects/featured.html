@@ -1,11 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'portfolio/base.html' %}
 {% load static %}
 
 {% block content %}
 
 {% if featured %}
-{% comment %} <div class="tab-pane fade" id="featured" role="tabpanel" aria-labelledby="featured-tab"> {% endcomment %}
-        <h2 class="d-flex justify-content-center portfolio-text p-2 bg-light">{{featured.title}}</h2>
+        <h2 class="d-flex justify-content-center p-2">{{featured.title}}</h2>
         <div class="d-flex flex-column align-items-center">
             <div class="row justify-content-around">
                 <div class="card p-3 m-3 border border-secondary rounded col-md-9" >

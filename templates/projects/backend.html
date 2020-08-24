@@ -1,15 +1,15 @@
-{% extends 'base.html' %}
+{% extends 'portfolio/base.html' %}
 {% load static %}
 
 {% block content %}
 
 
 {% comment %} <div class="tab-pane fade" id="frontend" role="tabpanel" aria-labelledby="frontend-tab"> {% endcomment %}
-        <h2 class="d-flex justify-content-center portfolio-text bg-light p-2">Python | Django</h2>
+        <h2 class="d-flex justify-content-center p-2">Python | Django</h2>
         <div class="container">
             <div class="row justify-content-around">
                 {% for project in projects %}
-                    <div class="card p-3 m-3 border border-secondary rounded col-md-5 bg-light" >
+                    <div class="card p-3 m-3 border border-secondary rounded col-md-5 " >
                         <img class="card-img-top" src="../{{ project.picture_1 }}" alt="{{project.title}}" style="height: 300px">
                         <div class="card-body">
                             <h5 class="card-title">{{project.title}}</h5>
