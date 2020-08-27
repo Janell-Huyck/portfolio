@@ -13,6 +13,10 @@
                 {% if user.is_authenticated %}
                     <a class="nav-item nav-link {% if request.resolver_match.url_name == "add_tag" %}active{% endif %}" href="{% url 'add_tag'%}">Add Blog Tag</a>
                     <a class="nav-item nav-link {% if request.resolver_match.url_name == "add_tag" %}active{% endif %}" href="{% url 'new' %}">New Post</a>
+                    <a class="nav-item nav-link {% if request.resolver_match.url_name == "admin" %}active{% endif %}" href="/admin/">Admin</a>
+                    {% comment %} <a class="nav-item nav-link {% if request.resolver_match.url_name == "grocery_api" %}active{% endif %}" href="{% url 'grocery_api'%}">Grocer API</a> {% endcomment %}
+
+
                 {% endif %}
             </div>
         </div>
