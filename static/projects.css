@@ -53,3 +53,9 @@ body {
 .nav-hamburger {
   color: white;
 }
+
+.post-header-picture {
+  max-height: 80vh;
+  max-width: 80vh;
+  align-self: center;
+}

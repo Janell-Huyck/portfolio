@@ -145,4 +145,14 @@ AUTH_USER_MODEL = "custom_user.CustomUser"
 CORS_ORIGIN_REGEX_WHITELIST = [
     r"^(http)?s?:\/\/localhost:\d\d\d\d",
 ]
+CSRF_TRUSTED_ORIGINS = ["localhost:3000"]
 
+if DEBUG:
+    CORS_ORIGIN_REGEX_WHITELIST = [
+        r"^(http)?s?:\/\/localhost:\d\d\d\d",
+    ]
+    CSRF_TRUSTED_ORIGINS = ["localhost:3000"]
+else:
+    CSRF_TRUSTED_ORIGINS = [
+        "https://janell-huyck.github.io/grocery-list/",
+    ]
