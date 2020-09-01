@@ -1,0 +1,21 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row align-items-center justify-content-around p-3"> 
+
+        <!-- col 1: text.  on left when large, else under picture -->
+        <div class="col-lg-7 order-lg-1 order-2 text-center justify-content-center mt-4">
+            <h1 class=" p-2 mt-2">{{intro1}}</h1>
+            <h2 class=" p-2 mt-2">{{intro2}}</h2>
+        </div>
+        
+        <!-- col 2: profile image. on right when large else on top -->
+        <div class="col-lg-5 order-lg-2 order-1">
+            <img class = "img-fluid profile-image  d-block mx-auto m-5 " src={{profile_image_url}}>
+        </div>
+
+    </div> <!-- end row-->
+    
+
+{% endblock %}

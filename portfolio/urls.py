@@ -21,10 +21,11 @@ from projects.views import error404, error500, index
 
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("admin/", admin.site.urls, name="admin"),
     path("", index, name="home"),
     path("projects/", include("projects.urls")),
     path("blog/", include("blog.urls")),
+    # path("grocery/", include("grocery.urls")),
 ]
 
 

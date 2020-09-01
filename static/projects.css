@@ -1,55 +1,61 @@
 body {
-  --bg-accent-color-dark:hsl(27, 100%, 50%);
-  --bg-accent-color-med:hsl(27, 100%, 60%);
+  --bg-accent-color-dark: hsl(27, 100%, 50%);
+  --bg-accent-color-med: hsl(27, 100%, 60%);
   --bg-accent-color-lt: hsl(27, 100%, 72%);
+  --bg-accent-color-very-lt: hsl(27, 100%, 85%);
   box-sizing: border-box;
-  background-image: url('./img/backgrounds/tangarine-cream-diagonal-fade.jpg');
+  background-image: url("./img/backgrounds/tangarine-cream-diagonal-fade.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-};
-
+}
 
 .profile-image {
-    background-color: gainsboro;
-    border-radius: 50%;
-    object-fit: cover;
-    overflow: hidden;
+  background-color: var(--bg-accent-color-lt);
+  border-radius: 50%;
+  object-fit: cover;
+  overflow: hidden;
+  height: 60vh;
 }
 
 .portfolio-text {
-    color: black;
+  color: black;
+  background-color: var(--bg-accent-color-very-lt);
 }
-
 
 .active {
-    font-size:x-large ;
+  font-size: x-large;
 }
 
-
-.nav-link{
-    align-self: center;
-    align-content: center;
+.nav-link {
+  align-self: center;
+  align-content: center;
 }
 
 .my-nav {
-    background-color:var(--bg-accent-color-med) ;
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    opacity: 100%;
-    z-index: 30;
-    width: 100vw;
-    margin: 0;
+  background-color: var(--bg-accent-color-med);
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  opacity: 100%;
+  z-index: 30;
+  width: 100vw;
+  margin: 0;
 }
 
 .top-pad {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .tab-pane {
-    padding-top: 2rem;
+  padding-top: 2rem;
 }
 
 .nav-hamburger {
-    color: white;
+  color: white;
+}
+
+.post-header-picture {
+  max-height: 80vh;
+  max-width: 80vh;
+  align-self: center;
 }

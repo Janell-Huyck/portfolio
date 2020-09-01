@@ -27,7 +27,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 if DEBUG:
     ALLOWED_HOSTS = ["*"]
@@ -45,9 +45,13 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "fontawesome_5",
     "ckeditor",
+    "rest_framework",
+    "corsheaders",
+    "custom_user",
     "portfolio_layout",
     "projects",
     "blog",
+    "grocery_list_backend",
 ]
 
 MIDDLEWARE = [
@@ -131,6 +135,24 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static_deploy")
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-LOGIN_URL = "/login/"
-LOGOUT_REDIRECT_URL = "home"
+LOGIN_URL = "/login_page/"
+LOGOUT_URL = "/logout_page/"
+LOGIN_REDIRECT_URL = "/home/"
+LOGOUT_REDIRECT_URL = "/login_page/"
 
+AUTH_USER_MODEL = "custom_user.CustomUser"
+
+CORS_ORIGIN_REGEX_WHITELIST = [
+    r"^(http)?s?:\/\/localhost:\d\d\d\d",
+]
+CSRF_TRUSTED_ORIGINS = ["localhost:3000"]
+
+if DEBUG:
+    CORS_ORIGIN_REGEX_WHITELIST = [
+        r"^(http)?s?:\/\/localhost:\d\d\d\d",
+    ]
+    CSRF_TRUSTED_ORIGINS = ["localhost:3000"]
+else:
+    CSRF_TRUSTED_ORIGINS = [
+        "https://janell-huyck.github.io/grocery-list/",
+    ]
