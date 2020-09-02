@@ -135,10 +135,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static_deploy")
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-LOGIN_URL = "/login_page/"
-LOGOUT_URL = "/logout_page/"
+LOGIN_URL = "/login/"
+LOGOUT_URL = "/logout/"
 LOGIN_REDIRECT_URL = "/home/"
-LOGOUT_REDIRECT_URL = "/login_page/"
+LOGOUT_REDIRECT_URL = "/login/"
 
 AUTH_USER_MODEL = "custom_user.CustomUser"
 

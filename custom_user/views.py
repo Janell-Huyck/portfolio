@@ -1,25 +1,22 @@
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from django.contrib.auth.decorators import login_required
+
+# from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, login, authenticate
 from django.shortcuts import render
-from portfolio import settings
+
+# from portfolio import settings
 from custom_user.forms import LoginForm, CustomUserForm
 from custom_user.models import CustomUser
 
 
-# @login_required
-# def index(request):
-#     context = {"settings": settings.AUTH_USER_MODEL}
-#     return render(request, "index.html", context)
-
-
 def logoutView(request):
     logout(request)
-    return HttpResponseRedirect(reverse("loginPage"))
+    return HttpResponseRedirect(reverse("home"))
 
 
 def loginView(request):
+    html = "portfolio/general_form.html"
     message_after = ""
     if request.method == "POST":
         form = LoginForm(request.POST)
@@ -35,12 +32,11 @@ def loginView(request):
                 message_after = """Credentials supplied do not match our records.
                    Please try again."""
     form = LoginForm()
-    return render(
-        request, "general_form.html", {"form": form, "message_after": message_after}
-    )
+    return render(request, html, {"form": form, "message_after": message_after})
 
 
 def signupView(request):
+    html = "portfolio/general_form.html"
     context = {}
     if request.method == "POST":
         form = CustomUserForm(request.POST)
@@ -64,4 +60,4 @@ def signupView(request):
     else:
         form = CustomUserForm()
         context["form"] = form
-    return render(request, "general_form.html", context)
+    return render(request, html, context)
