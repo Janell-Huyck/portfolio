@@ -11,8 +11,8 @@ from blog.models import Post, Tag
 
 def index(request):
     html = "blog/index.html"
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by(
-        "-published_date"
+    posts = Post.objects.filter(created_date__lte=timezone.now()).order_by(
+        "-created_date"
     )
     if posts:
         context = {"posts": posts}
