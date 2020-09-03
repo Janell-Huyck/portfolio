@@ -3,8 +3,7 @@ from custom_user import views
 
 
 urlpatterns = [
-    path("", views.index, name="home"),
-    path("login_page/", views.loginView, name="loginPage"),
-    path("logout_page/", views.logoutView, name="logoutPage"),
-    path("signup_page/", views.signupView, name="signupPage"),
+    path("login/", views.loginView, name="login"),
+    path("logout/", views.logoutView, name="logout"),
+    path("signup/", views.signupView, name="signup"),
 ]

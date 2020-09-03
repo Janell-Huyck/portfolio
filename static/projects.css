@@ -31,6 +31,13 @@ body {
   align-content: center;
 }
 
+.nav-name {
+  align-self: center;
+  align-content: center;
+  justify-items: center;
+  padding: 8px;
+}
+
 .my-nav {
   background-color: var(--bg-accent-color-med);
   position: fixed;
@@ -55,7 +62,6 @@ body {
 }
 
 .post-header-picture {
-  max-height: 80vh;
-  max-width: 80vh;
+  max-width: 80%;
   align-self: center;
 }

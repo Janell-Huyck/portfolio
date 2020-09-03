@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from projects.views import error404, error500, index
+from custom_user.urls import urlpatterns as user_urls
 
 
 urlpatterns = [
@@ -25,9 +26,10 @@ urlpatterns = [
     path("", index, name="home"),
     path("projects/", include("projects.urls")),
     path("blog/", include("blog.urls")),
-    # path("grocery/", include("grocery.urls")),
+    path("grocery/", include("grocery_api.urls")),
 ]
 
+urlpatterns += user_urls
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
