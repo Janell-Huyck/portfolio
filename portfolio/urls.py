@@ -26,7 +26,7 @@ urlpatterns = [
     path("", index, name="home"),
     path("projects/", include("projects.urls")),
     path("blog/", include("blog.urls")),
-    # path("grocery/", include("grocery.urls")),
+    path("grocery/", include("grocery_api.urls")),
 ]
 
 urlpatterns += user_urls
