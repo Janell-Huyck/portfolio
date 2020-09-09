@@ -14,5 +14,5 @@ class GroceryItemSerializer(HyperlinkedModelSerializer):
 class CustomUserSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = CustomUser
-        fields = "display_name"
+        fields = ("display_name",)
 
