@@ -28,6 +28,7 @@ SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+
 if DEBUG:
     ALLOWED_HOSTS = ["*"]
 else:
@@ -51,9 +52,12 @@ INSTALLED_APPS = [
     "projects",
     "blog",
     "grocery_list_backend",
+    "grocery_api",
+    "custom_user_api",
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",

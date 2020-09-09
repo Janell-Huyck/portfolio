@@ -27,6 +27,7 @@ urlpatterns = [
     path("projects/", include("projects.urls")),
     path("blog/", include("blog.urls")),
     path("grocery/", include("grocery_api.urls")),
+    path("custom_user/", include("custom_user_api.urls")),
 ]
 
 urlpatterns += user_urls
