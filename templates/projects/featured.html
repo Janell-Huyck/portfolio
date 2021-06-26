@@ -1,41 +1,52 @@
-{% extends 'portfolio/base.html' %}
-{% load static %}
-
-{% block content %}
-
-{% if featured %}
-        <h2 class="d-flex justify-content-center p-2">{{featured.title}}</h2>
-        <div class="d-flex flex-column align-items-center">
-            <div class="row justify-content-around">
-                <div class="card p-3 m-3 border border-secondary rounded col-md-9" >
-                    <img class="card-img-top" src="../{{ featured.picture_1 }}" alt="{{featured.title}}" style="height: 300px">
-                    <div class="card-body">
-                        <h5 class="card-title">{{featured.title}}</h5>
-                        <p class="card-text my-card-text">{{featured.synopsis}}</p>
-                        <div class="d-flex justify-content-around">
-                                {% if featured.slug %}
-                                <span>
-                                    <a href="{% url 'project_detail' featured.slug %}" class="btn btn-primary">
-                                        More Details</a>
-                                </span>
-                                {% endif %}
-                                {% if featured.site_url %}
-                                <span>
-                                    <a href="{{ featured.site_url}}" target="_blank" class="btn btn-primary ">
-                                    See Live</a>
-                                </span>
-                                {% endif %}
-                                {% if featured.repository %}
-                                <span>
-                                    <a href="{{ featured.repository}}" target="_blank" class="btn btn-primary ">
-                                    Repository</a>
-                                </span>
-                                {% endif %} 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>      
-    {% comment %} </div> {% endcomment %}
-    {% endif %}
-    {% endblock %}
+{% extends 'portfolio/base.html' %} {% load static %} {% block content %} {% if
+featured %}
+<h2 class="d-flex justify-content-center p-2">{{featured.title}}</h2>
+<div class="d-flex flex-column align-items-center">
+  <div class="row justify-content-around">
+    <div class="card p-3 m-3 border border-secondary rounded col-md-9">
+      <img
+        class="card-img-top"
+        src="../{{ featured.picture_1 }}"
+        alt="{{featured.title}}"
+        style="height: 300px"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{featured.title}}</h5>
+        <p class="card-text my-card-text">{{featured.synopsis}}</p>
+        <div class="d-flex justify-content-around">
+          {% if featured.slug %}
+          <span>
+            <a
+              href="{% url 'project_detail' featured.slug %}"
+              class="btn btn-primary"
+            >
+              More Details</a
+            >
+          </span>
+          {% endif %} {% if featured.site_url %}
+          <span>
+            <a
+              href="{{ featured.site_url}}"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              See Live</a
+            >
+          </span>
+          {% endif %} {% if featured.repository %}
+          <span>
+            <a
+              href="{{ featured.repository}}"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              Repository</a
+            >
+          </span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
