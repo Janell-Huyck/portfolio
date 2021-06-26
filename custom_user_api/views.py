@@ -8,4 +8,3 @@ class CustomUserViewSet(ModelViewSet):
 
     serializer_class = CustomUserSerializer
     queryset = CustomUser.objects.all()
-

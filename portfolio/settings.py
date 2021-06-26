@@ -27,7 +27,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 if DEBUG:
     ALLOWED_HOSTS = ["*"]
@@ -50,9 +50,6 @@ INSTALLED_APPS = [
     "custom_user",
     "portfolio_layout",
     "projects",
-    "blog",
-    "grocery_list_backend",
-    "grocery_api",
     "custom_user_api",
 ]
 
@@ -150,12 +147,16 @@ CORS_ORIGIN_REGEX_WHITELIST = [
 ]
 CSRF_TRUSTED_ORIGINS = ["localhost:3000"]
 
-if DEBUG:
-    CORS_ORIGIN_REGEX_WHITELIST = [
-        r"^(http)?s?:\/\/localhost:\d\d\d\d",
-    ]
-    CSRF_TRUSTED_ORIGINS = ["localhost:3000"]
-else:
-    CSRF_TRUSTED_ORIGINS = [
-        "https://janell-huyck.github.io/grocery-list/",
-    ]
+
+# The lines below were useful for CORS errors when I was using
+# my github.io for grocerly list app.
+#
+# if DEBUG:
+#     CORS_ORIGIN_REGEX_WHITELIST = [
+#         r"^(http)?s?:\/\/localhost:\d\d\d\d",
+#     ]
+#     CSRF_TRUSTED_ORIGINS = ["localhost:3000"]
+# else:
+#     CSRF_TRUSTED_ORIGINS = [
+#         "https://janell-huyck.github.io/grocery-list/",
+#     ]
